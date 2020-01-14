@@ -1,0 +1,23 @@
+{
+  "name": "@musical-patterns/pattern-met-mos",
+  "version": "1.0.1",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MusicalPatterns/pattern-metMos.git"
+  },
+  "dependencies": {
+    "@musical-patterns/id": "^1.0.11",
+    "@musical-patterns/material": "^1.0.108",
+    "@musical-patterns/metadata": "^1.0.13",
+    "@musical-patterns/pattern": "^1.0.268",
+    "@musical-patterns/spec": "^1.0.40",
+    "@musical-patterns/utilities": "^1.0.589"
+  },
+  "devDependencies": {
+    "@musical-patterns/cli": "^1.0.568",
+    "@musical-patterns/playroom": "^1.0.411"
+  }
+}

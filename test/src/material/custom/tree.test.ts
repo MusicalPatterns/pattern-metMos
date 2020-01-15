@@ -5,32 +5,32 @@ describe('tree', () => {
     const TR_1_4: TreeRatio = {
         parentGreater: TR_1_3,
         parentLesser: TR_0_1,
-        ratio: as.Fraction([ as.Numerator(1), as.Denominator(4) ]),
+        value: as.Fraction([ as.Numerator(1), as.Denominator(4) ]),
     }
     const TR_2_5: TreeRatio = {
         parentGreater: TR_1_2,
         parentLesser: TR_1_3,
-        ratio: as.Fraction([ as.Numerator(2), as.Denominator(5) ]),
+        value: as.Fraction([ as.Numerator(2), as.Denominator(5) ]),
     }
     const TR_1_5: TreeRatio = {
         parentGreater: TR_1_4,
         parentLesser: TR_0_1,
-        ratio: as.Fraction([ as.Numerator(1), as.Denominator(5) ]),
+        value: as.Fraction([ as.Numerator(1), as.Denominator(5) ]),
     }
     const TR_2_7: TreeRatio = {
         parentGreater: TR_1_3,
         parentLesser: TR_1_4,
-        ratio: as.Fraction([ as.Numerator(2), as.Denominator(7) ]),
+        value: as.Fraction([ as.Numerator(2), as.Denominator(7) ]),
     }
     const TR_3_8: TreeRatio = {
         parentGreater: TR_2_5,
         parentLesser: TR_1_3,
-        ratio: as.Fraction([ as.Numerator(3), as.Denominator(8) ]),
+        value: as.Fraction([ as.Numerator(3), as.Denominator(8) ]),
     }
     const TR_3_7: TreeRatio = {
         parentGreater: TR_1_2,
         parentLesser: TR_2_5,
-        ratio: as.Fraction([ as.Numerator(3), as.Denominator(7) ]),
+        value: as.Fraction([ as.Numerator(3), as.Denominator(7) ]),
     }
 
     describe('level 0', () => {

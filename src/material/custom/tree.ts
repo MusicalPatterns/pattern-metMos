@@ -9,7 +9,7 @@ import {
     use,
 } from '@musical-patterns/utilities'
 import { TR_0_1, TR_1_1, TR_1_2, TR_1_3 } from './constants'
-import { calculateLevel } from './levelRatios'
+import { calculateLevel } from './level'
 import { Tree, TreeLevel } from './types'
 
 const calculateTree: (targetLevel: Ordinal<Tree>) => TreeLevel[] =

@@ -1,10 +1,10 @@
-// tslint:disable no-non-null-assertion
-
 import {
     as,
     Fraction,
     getDenominator,
     getNumerator,
+    isUndefined,
+    Maybe,
     NormalScalar,
     quotient,
     sum,
@@ -12,19 +12,24 @@ import {
 } from '@musical-patterns/utilities'
 import { CalculateGeneratorParams, Lean, Parent, TreeRatio } from './types'
 
-const calculateGenerator: (calculateGeneratorParams: CalculateGeneratorParams) => NormalScalar =
-    ({ weight, lean, parent, ratio }: CalculateGeneratorParams): NormalScalar => {
-        const parentRatio: TreeRatio = parent === Parent.GREATER ? ratio.parentGreater! : ratio.parentLesser!
+const calculateGenerator: (calculateGeneratorParams: CalculateGeneratorParams) => Maybe<NormalScalar> =
+    ({ weight, lean, parent, treeRatio }: CalculateGeneratorParams): Maybe<NormalScalar> => {
+        const parentTreeRatio: Maybe<TreeRatio> =
+            parent === Parent.GREATER ? treeRatio.parentGreater : treeRatio.parentLesser
+
+        if (isUndefined(parentTreeRatio)) {
+            return undefined
+        }
 
         let weightedRatio: Fraction
         let unweightedRatio: Fraction
         if (lean === Lean.PARENTWARD) {
-            weightedRatio = parentRatio.value
-            unweightedRatio = ratio.value
+            weightedRatio = parentTreeRatio.value
+            unweightedRatio = treeRatio.value
         }
         else {
-            weightedRatio = ratio.value
-            unweightedRatio = parentRatio.value
+            weightedRatio = treeRatio.value
+            unweightedRatio = parentTreeRatio.value
         }
 
         return as.NormalScalar(quotient(

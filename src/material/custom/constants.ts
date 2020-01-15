@@ -1,6 +1,8 @@
 import { as, THREE, TWO } from '@musical-patterns/utilities'
 import { TreeRatio } from './types'
 
+const MET_MOS_PRECISION: number = 15
+
 const TR_0_1: TreeRatio = {
     parentGreater: undefined,
     parentLesser: undefined,
@@ -46,4 +48,5 @@ export {
     _2_MU_3,
     _1_MU_3,
     _0_MU_3,
+    MET_MOS_PRECISION,
 }

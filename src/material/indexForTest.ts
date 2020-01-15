@@ -2,6 +2,7 @@
 
 export {
     calculateGenerator,
+    calculateIntroductions,
     calculateTree,
     Tree,
     TreeRatio,
@@ -20,4 +21,5 @@ export {
     _2_MU_3,
     _1_MU_3,
     _0_MU_3,
+    MET_MOS_PRECISION,
 } from './custom/indexForTest'

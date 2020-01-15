@@ -8,7 +8,7 @@ const calculateLevel: (previousLevel: TreeLevel) => TreeLevel =
         const nextLevel: TreeLevel = []
 
         previousLevel.forEach((treeRatio: TreeRatio) => {
-            const newLesserRatio: TreeRatio = {
+            const newLesserTreeRatio: TreeRatio = {
                 parentGreater: treeRatio,
                 parentLesser: treeRatio.parentLesser,
                 value: as.Fraction([
@@ -16,7 +16,7 @@ const calculateLevel: (previousLevel: TreeLevel) => TreeLevel =
                     sum(getDenominator(treeRatio.value), getDenominator(treeRatio.parentLesser!.value)),
                 ]),
             }
-            const newGreaterRatio: TreeRatio = {
+            const newGreaterTreeRatio: TreeRatio = {
                 parentGreater: treeRatio.parentGreater,
                 parentLesser: treeRatio,
                 value: as.Fraction([
@@ -24,8 +24,8 @@ const calculateLevel: (previousLevel: TreeLevel) => TreeLevel =
                     sum(getDenominator(treeRatio.value), getDenominator(treeRatio.parentGreater!.value)),
                 ]),
             }
-            nextLevel.push(newLesserRatio)
-            nextLevel.push(newGreaterRatio)
+            nextLevel.push(newLesserTreeRatio)
+            nextLevel.push(newGreaterTreeRatio)
         })
 
         return nextLevel

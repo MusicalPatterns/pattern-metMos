@@ -14,7 +14,9 @@ export {
     _2_MU_3,
     _1_MU_3,
     _0_MU_3,
+    MET_MOS_PRECISION,
 } from './constants'
 export { calculateTree } from './tree'
 export { calculateGenerator } from './generator'
+export { calculateIntroductions } from './introductions'
 export { Tree, TreeRatio, Lean, Parent } from './types'

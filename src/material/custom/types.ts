@@ -1,4 +1,4 @@
-import { Fraction, Maybe, Scalar } from '@musical-patterns/utilities'
+import { Fraction, Maybe, NormalScalar, Ordinal, Scalar } from '@musical-patterns/utilities'
 
 interface TreeRatio {
     parentGreater: Maybe<TreeRatio>,
@@ -20,11 +20,29 @@ enum Parent {
     LESSER = 'LESSER',
 }
 
-interface CalculateGeneratorParams {
+interface IntervalOptions {
     lean: Lean,
     parent: Parent,
-    ratio: TreeRatio,
     weight: Scalar,
+}
+
+interface CalculateGeneratorParams extends IntervalOptions {
+    treeRatio: TreeRatio,
+}
+
+interface DoesIntroduceParams extends CalculateGeneratorParams {
+    generators: Generator[],
+    levelIndex: Ordinal<Tree>,
+}
+
+interface Equivalence extends IntervalOptions {
+    levelIndex: Ordinal<Tree>,
+    ratio: Fraction,
+}
+
+interface Generator {
+    equivalences: Equivalence[],
+    value: NormalScalar,
 }
 
 export {
@@ -34,4 +52,7 @@ export {
     CalculateGeneratorParams,
     Parent,
     Lean,
+    Generator,
+    Equivalence,
+    DoesIntroduceParams,
 }

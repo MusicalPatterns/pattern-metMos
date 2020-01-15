@@ -1,12 +1,17 @@
-import { Fraction, Integer, Maybe, Ordinal } from '@musical-patterns/utilities'
+import { Fraction, Maybe } from '@musical-patterns/utilities'
 
 interface TreeRatio {
-    level: Ordinal,
     parentGreater: Maybe<TreeRatio>,
     parentLesser: Maybe<TreeRatio>,
     ratio: Fraction,
 }
 
+type TreeLevel = TreeRatio[]
+
+type Tree = TreeLevel[]
+
 export {
     TreeRatio,
+    TreeLevel,
+    Tree,
 }

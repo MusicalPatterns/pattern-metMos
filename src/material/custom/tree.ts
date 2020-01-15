@@ -1,33 +1,28 @@
-import { as, INCREMENT, ONE, Ordinal, range, use } from '@musical-patterns/utilities'
-import { calculateLevelRatios } from './levelRatios'
-import { TreeRatio } from './types'
+import {
+    finalElement,
+    INITIAL,
+    NEXT,
+    Ordinal,
+    slice,
+    THIRD,
+    translateFromZeroIndexedToOneIndexed,
+    use,
+} from '@musical-patterns/utilities'
+import { TR_0_1, TR_1_1, TR_1_2, TR_1_3 } from './constants'
+import { calculateLevel } from './levelRatios'
+import { Tree, TreeLevel } from './types'
 
-const calculateTree: (targetLevel: Ordinal) => TreeRatio[] =
-    (targetLevel: Ordinal): TreeRatio[] => {
-        const tree: TreeRatio[] = [
-            {
-                level: as.Ordinal(1),
-                parentGreater: undefined,
-                parentLesser: undefined,
-                ratio: as.Fraction([ as.Numerator(0), as.Denominator(1) ]),
-            },
-            {
-                level: as.Ordinal(1),
-                parentGreater: undefined,
-                parentLesser: undefined,
-                ratio: as.Fraction([ as.Numerator(1), as.Denominator(1) ]),
-            },
-        ]
+const calculateTree: (targetLevel: Ordinal<Tree>) => TreeLevel[] =
+    (targetLevel: Ordinal<Tree>): TreeLevel[] => {
+        const tree: TreeLevel[] = [ [ TR_0_1 ], [ TR_1_1 ], [ TR_1_2 ], [ TR_1_3 ] ]
 
-        range(ONE, use.Cardinal(targetLevel, INCREMENT))
-            .map(as.Ordinal)
-            .forEach((levelIndex: Ordinal) => {
-                const newRatios: TreeRatio[] = calculateLevelRatios(tree, levelIndex)
+        if (targetLevel <= THIRD) {
+            return slice(tree, INITIAL, translateFromZeroIndexedToOneIndexed(targetLevel))
+        }
 
-                newRatios.forEach((newRatio: TreeRatio) => {
-                    tree.push(newRatio)
-                })
-            })
+        for (let index: Ordinal<Tree> = THIRD; index < targetLevel; index = use.Cardinal(index, NEXT)) {
+            tree.push(calculateLevel(finalElement(tree)))
+        }
 
         return tree
     }

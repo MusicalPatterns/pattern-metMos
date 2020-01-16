@@ -19,4 +19,5 @@ export {
 export { calculateTree } from './tree'
 export { calculateGenerator } from './generator'
 export { calculateIntroductions } from './introductions'
+export { calculateMetallicMean } from './metallicMean'
 export { Tree, TreeRatio, Lean, Parent } from './types'

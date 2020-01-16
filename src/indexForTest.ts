@@ -3,6 +3,7 @@ export { pattern } from './patterns'
 export {
     calculateGenerator,
     calculateIntroductions,
+    calculateMetallicMean,
     calculateTree,
     Tree,
     TreeRatio,

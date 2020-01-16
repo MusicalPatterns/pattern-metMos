@@ -1,5 +1,6 @@
 import { as, Cardinal, INCREMENT, map, Ordinal, Scalar, use } from '@musical-patterns/utilities'
 import { doesIntroduce } from './doesIntroduce'
+import { logGenerators } from './logGenerators'
 import { calculateTree } from './tree'
 import { Generator, Lean, Parent, Tree, TreeLevel, TreeRatio } from './types'
 
@@ -9,7 +10,7 @@ const calculateIntroductions: (targetLevel: Ordinal<Tree>, weights: Scalar[]) =>
 
         const generators: Generator[] = []
 
-        return map(
+        const results: Cardinal[] = map(
             tree,
             (level: TreeLevel, levelIndex: Ordinal<Tree>) => {
                 let levelIntroductions: Cardinal = as.Cardinal(0)
@@ -38,6 +39,10 @@ const calculateIntroductions: (targetLevel: Ordinal<Tree>, weights: Scalar[]) =>
                 return levelIntroductions
             },
         )
+
+        logGenerators(generators)
+
+        return results
     }
 
 export {

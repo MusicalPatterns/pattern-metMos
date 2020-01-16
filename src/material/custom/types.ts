@@ -36,7 +36,6 @@ interface DoesIntroduceParams extends CalculateGeneratorParams {
 }
 
 interface Equivalence extends IntervalOptions {
-    levelIndex: Ordinal<Tree>,
     ratio: Fraction,
 }
 

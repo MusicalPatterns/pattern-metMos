@@ -1,4 +1,4 @@
-import { Fraction, Maybe, NormalScalar, Ordinal, Scalar } from '@musical-patterns/utilities'
+import { Cycle, Fraction, Maybe, NormalScalar, Ordinal, Scalar } from '@musical-patterns/utilities'
 
 interface TreeRatio {
     parentGreater: Maybe<TreeRatio>,
@@ -44,6 +44,10 @@ interface Generator {
     value: NormalScalar,
 }
 
+type EquivalencePattern = IntervalOptions[]
+
+type PeriodicEquivalencePatternSegment = Cycle<IntervalOptions>
+
 export {
     TreeRatio,
     TreeLevel,
@@ -54,4 +58,7 @@ export {
     Generator,
     Equivalence,
     DoesIntroduceParams,
+    IntervalOptions,
+    EquivalencePattern,
+    PeriodicEquivalencePatternSegment,
 }

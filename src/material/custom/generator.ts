@@ -10,7 +10,8 @@ import {
     sum,
     use,
 } from '@musical-patterns/utilities'
-import { ComputeGeneratorParams, Lean, Parent, TreeRatio } from './types'
+import { Lean, Parent } from '../../types'
+import { ComputeGeneratorParams, TreeRatio } from './types'
 
 const computeGenerator: (computeGeneratorParams: ComputeGeneratorParams) => Maybe<NormalScalar> =
     ({ weight, lean, parent, treeRatio }: ComputeGeneratorParams): Maybe<NormalScalar> => {

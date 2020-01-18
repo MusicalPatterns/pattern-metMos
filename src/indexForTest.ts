@@ -6,6 +6,8 @@ export {
     computeIntroductions,
     computeMetallicMean,
     computeTree,
+    computeMos,
+    computeIsotope,
     EquivalencePattern,
     PeriodicEquivalencePatternSegment,
     Tree,
@@ -14,8 +16,6 @@ export {
     TR_1_1,
     TR_1_2,
     TR_1_3,
-    Lean,
-    Parent,
     _1_MU_1,
     _0_MU_1,
     _2_MU_2,
@@ -27,3 +27,4 @@ export {
     _0_MU_3,
     MET_MOS_PRECISION,
 } from './material/indexForTest'
+export { Lean, Parent } from './types'

@@ -1,4 +1,4 @@
-import { Specs } from '@musical-patterns/spec'
+import { Configurations, OptionedConfiguration, RangedConfiguration, Specs } from '@musical-patterns/spec'
 import { Cardinal, Fraction, Frequency, Logarithm, Ordinal } from '@musical-patterns/utilities'
 import { Lean, Parent } from '../types'
 
@@ -22,7 +22,18 @@ interface MetMosSpecs extends Specs {
     [ MetMosSpec.ISOTOPE ]: Ordinal,
 }
 
+interface MetMosConfigurations extends Configurations {
+    [ MetMosSpec.ITERATIONS ]: RangedConfiguration,
+    [ MetMosSpec.PERIOD ]: RangedConfiguration,
+    [ MetMosSpec.RATIO ]: RangedConfiguration,
+    [ MetMosSpec.LEAN ]: OptionedConfiguration,
+    [ MetMosSpec.PARENT ]: OptionedConfiguration,
+    [ MetMosSpec.METAL ]: RangedConfiguration,
+    [ MetMosSpec.ISOTOPE ]: RangedConfiguration,
+}
+
 export {
     MetMosSpecs,
     MetMosSpec,
+    MetMosConfigurations,
 }

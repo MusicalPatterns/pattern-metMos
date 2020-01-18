@@ -20,13 +20,13 @@ enum Parent {
     LESSER = 'LESSER',
 }
 
-interface IntervalOptions {
+interface RatioOptions {
     lean: Lean,
     parent: Parent,
     weight: Scalar,
 }
 
-interface CalculateGeneratorParams extends IntervalOptions {
+interface CalculateGeneratorParams extends RatioOptions {
     treeRatio: TreeRatio,
 }
 
@@ -35,7 +35,7 @@ interface DoesIntroduceParams extends CalculateGeneratorParams {
     levelIndex: Ordinal<Tree>,
 }
 
-interface Equivalence extends IntervalOptions {
+interface Equivalence extends RatioOptions {
     ratio: Fraction,
 }
 
@@ -44,9 +44,9 @@ interface Generator {
     value: NormalScalar,
 }
 
-type EquivalencePattern = IntervalOptions[]
+type EquivalencePattern = RatioOptions[]
 
-type PeriodicEquivalencePatternSegment = Cycle<IntervalOptions>
+type PeriodicEquivalencePatternSegment = Cycle<RatioOptions>
 
 export {
     TreeRatio,
@@ -58,7 +58,7 @@ export {
     Generator,
     Equivalence,
     DoesIntroduceParams,
-    IntervalOptions,
+    RatioOptions,
     EquivalencePattern,
     PeriodicEquivalencePatternSegment,
 }

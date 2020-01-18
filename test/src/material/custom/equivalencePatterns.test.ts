@@ -19,8 +19,8 @@ import {
     _2_MU_2,
     _2_MU_3,
     _3_MU_3,
-    calculateEquivalencePatterns,
-    calculateMetallicMean,
+    computeEquivalencePatterns,
+    computeMetallicMean,
     EquivalencePattern,
     Lean,
     Parent,
@@ -56,7 +56,7 @@ describe('equivalence patterns - given a target level and list of means and/or i
         ])
 
         beforeAll(() => {
-            equivalencePatterns = calculateEquivalencePatterns(
+            equivalencePatterns = computeEquivalencePatterns(
                 as.Ordinal<Tree>(5),
                 [ _1_MU_1 ].map(as.Scalar),
             )
@@ -114,7 +114,7 @@ describe('equivalence patterns - given a target level and list of means and/or i
             { lean: Lean.CHILDWARD, parent: Parent.GREATER, weight: as.Scalar(_2_MU_2) },
         ])
         beforeAll(() => {
-            equivalencePatterns = calculateEquivalencePatterns(
+            equivalencePatterns = computeEquivalencePatterns(
                 as.Ordinal<Tree>(7),
                 [ _2_MU_2, _1_MU_2 ].map(as.Scalar),
             )
@@ -213,7 +213,7 @@ describe('equivalence patterns - given a target level and list of means and/or i
             { lean: Lean.CHILDWARD, parent: Parent.GREATER, weight: as.Scalar(_3_MU_3) },
         ])
         beforeAll(() => {
-            equivalencePatterns = calculateEquivalencePatterns(
+            equivalencePatterns = computeEquivalencePatterns(
                 as.Ordinal<Tree>(9),
                 [ _3_MU_3, _2_MU_3, _1_MU_3 ].map(as.Scalar),
             )
@@ -342,7 +342,7 @@ describe('equivalence patterns - given a target level and list of means and/or i
 
     describe('fourth metallic mean and isotopes', () => {
         let equivalencePatterns: EquivalencePattern[]
-        const _4_MU_4: number = calculateMetallicMean(as.Ordinal(4))
+        const _4_MU_4: number = computeMetallicMean(as.Ordinal(4))
         const _3_MU_4: number = _4_MU_4 - 1
         const _2_MU_4: number = _3_MU_4 - 1
         const _1_MU_4: number = _2_MU_4 - 1
@@ -357,7 +357,7 @@ describe('equivalence patterns - given a target level and list of means and/or i
             { lean: Lean.CHILDWARD, parent: Parent.GREATER, weight: as.Scalar(_4_MU_4) },
         ])
         beforeAll(() => {
-            equivalencePatterns = calculateEquivalencePatterns(
+            equivalencePatterns = computeEquivalencePatterns(
                 as.Ordinal<Tree>(11),
                 [ _4_MU_4, _3_MU_4, _2_MU_4, _1_MU_4 ].map(as.Scalar),
             )

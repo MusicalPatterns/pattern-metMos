@@ -16,9 +16,9 @@ export {
     _0_MU_3,
     MET_MOS_PRECISION,
 } from './constants'
-export { calculateEquivalencePatterns } from './equivalencePatterns'
-export { calculateGenerator } from './generator'
-export { calculateIntroductions } from './introductions'
-export { calculateMetallicMean } from './metallicMean'
-export { calculateTree } from './tree'
+export { computeEquivalencePatterns } from './equivalencePatterns'
+export { computeGenerator } from './generator'
+export { computeIntroductions } from './introductions'
+export { computeMetallicMean } from './metallicMean'
+export { computeTree } from './tree'
 export { Tree, TreeRatio, Lean, Parent, EquivalencePattern, PeriodicEquivalencePatternSegment } from './types'

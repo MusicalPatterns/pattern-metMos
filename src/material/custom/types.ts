@@ -26,11 +26,11 @@ interface RatioOptions {
     weight: Scalar,
 }
 
-interface CalculateGeneratorParams extends RatioOptions {
+interface ComputeGeneratorParams extends RatioOptions {
     treeRatio: TreeRatio,
 }
 
-interface DoesIntroduceParams extends CalculateGeneratorParams {
+interface DoesIntroduceParams extends ComputeGeneratorParams {
     generators: Generator[],
     levelIndex: Ordinal<Tree>,
 }
@@ -52,7 +52,7 @@ export {
     TreeRatio,
     TreeLevel,
     Tree,
-    CalculateGeneratorParams,
+    ComputeGeneratorParams,
     Parent,
     Lean,
     Generator,

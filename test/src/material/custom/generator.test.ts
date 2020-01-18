@@ -4,7 +4,7 @@ import {
     _1_MU_2,
     _2_MU_2,
     _2_MU_3,
-    calculateGenerator,
+    computeGenerator,
     Lean,
     MET_MOS_PRECISION,
     Parent,
@@ -12,9 +12,9 @@ import {
     TR_1_3,
 } from '../../../../src/indexForTest'
 
-describe('calculate generator', () => {
+describe('compute generator', () => {
     it('given a tree ratio, relative parent size, lean, and weight, returns a generator', () => {
-        const result: Maybe<NormalScalar> = calculateGenerator({
+        const result: Maybe<NormalScalar> = computeGenerator({
             lean: Lean.PARENTWARD,
             parent: Parent.LESSER,
             treeRatio: TR_1_1,
@@ -26,7 +26,7 @@ describe('calculate generator', () => {
     })
 
     it('works for a different metallic mean as weight', () => {
-        const result: Maybe<NormalScalar> = calculateGenerator({
+        const result: Maybe<NormalScalar> = computeGenerator({
             lean: Lean.PARENTWARD,
             parent: Parent.LESSER,
             treeRatio: TR_1_1,
@@ -38,7 +38,7 @@ describe('calculate generator', () => {
     })
 
     it('works for an isotope as weight', () => {
-        const result: Maybe<NormalScalar> = calculateGenerator({
+        const result: Maybe<NormalScalar> = computeGenerator({
             lean: Lean.PARENTWARD,
             parent: Parent.LESSER,
             treeRatio: TR_1_1,
@@ -50,7 +50,7 @@ describe('calculate generator', () => {
     })
 
     it('works for leaning childward', () => {
-        const result: Maybe<NormalScalar> = calculateGenerator({
+        const result: Maybe<NormalScalar> = computeGenerator({
             lean: Lean.CHILDWARD,
             parent: Parent.LESSER,
             treeRatio: TR_1_1,
@@ -62,7 +62,7 @@ describe('calculate generator', () => {
     })
 
     it('works for another tree ratio', () => {
-        const result: Maybe<NormalScalar> = calculateGenerator({
+        const result: Maybe<NormalScalar> = computeGenerator({
             lean: Lean.PARENTWARD,
             parent: Parent.LESSER,
             treeRatio: TR_1_3,
@@ -74,7 +74,7 @@ describe('calculate generator', () => {
     })
 
     it('works for the greater parent', () => {
-        const result: Maybe<NormalScalar> = calculateGenerator({
+        const result: Maybe<NormalScalar> = computeGenerator({
             lean: Lean.PARENTWARD,
             parent: Parent.GREATER,
             treeRatio: TR_1_3,
@@ -86,7 +86,7 @@ describe('calculate generator', () => {
     })
 
     it('works for all the other settings at once', () => {
-        const result: Maybe<NormalScalar> = calculateGenerator({
+        const result: Maybe<NormalScalar> = computeGenerator({
             lean: Lean.CHILDWARD,
             parent: Parent.GREATER,
             treeRatio: TR_1_3,

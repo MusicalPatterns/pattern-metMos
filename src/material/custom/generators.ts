@@ -1,8 +1,8 @@
 import { forEach, Ordinal, Scalar } from '@musical-patterns/utilities'
-import { calculateNewGenerator } from './newGenerator'
+import { computeNewGenerator } from './newGenerator'
 import { Generator, Lean, Parent, Tree, TreeLevel, TreeRatio } from './types'
 
-const calculateGenerators: (tree: TreeLevel[], weights: Scalar[]) => Generator[] =
+const computeGenerators: (tree: TreeLevel[], weights: Scalar[]) => Generator[] =
     (tree: TreeLevel[], weights: Scalar[]): Generator[] => {
         const generators: Generator[] = []
 
@@ -15,7 +15,7 @@ const calculateGenerators: (tree: TreeLevel[], weights: Scalar[]) => Generator[]
                             Object.values(Parent)
                                 .forEach((parent: Parent) => {
                                     weights.forEach((weight: Scalar) => {
-                                        calculateNewGenerator({
+                                        computeNewGenerator({
                                             generators,
                                             lean,
                                             levelIndex,
@@ -34,5 +34,5 @@ const calculateGenerators: (tree: TreeLevel[], weights: Scalar[]) => Generator[]
     }
 
 export {
-    calculateGenerators,
+    computeGenerators,
 }

@@ -10,10 +10,10 @@ import {
     sum,
     use,
 } from '@musical-patterns/utilities'
-import { CalculateGeneratorParams, Lean, Parent, TreeRatio } from './types'
+import { ComputeGeneratorParams, Lean, Parent, TreeRatio } from './types'
 
-const calculateGenerator: (calculateGeneratorParams: CalculateGeneratorParams) => Maybe<NormalScalar> =
-    ({ weight, lean, parent, treeRatio }: CalculateGeneratorParams): Maybe<NormalScalar> => {
+const computeGenerator: (computeGeneratorParams: ComputeGeneratorParams) => Maybe<NormalScalar> =
+    ({ weight, lean, parent, treeRatio }: ComputeGeneratorParams): Maybe<NormalScalar> => {
         const parentTreeRatio: Maybe<TreeRatio> =
             parent === Parent.GREATER ? treeRatio.parentGreater : treeRatio.parentLesser
 
@@ -45,5 +45,5 @@ const calculateGenerator: (calculateGeneratorParams: CalculateGeneratorParams) =
     }
 
 export {
-    calculateGenerator,
+    computeGenerator,
 }

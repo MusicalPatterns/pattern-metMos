@@ -1,6 +1,6 @@
 import { as, FOUR, Ordinal, quotient, SQUARE_ROOT, SQUARED, sum, TWO, use } from '@musical-patterns/utilities'
 
-const calculateMetallicMean: (nthMetal: Ordinal) => number =
+const computeMetallicMean: (nthMetal: Ordinal) => number =
     (nthMetal: Ordinal): number =>
         quotient(
             sum(
@@ -17,5 +17,5 @@ const calculateMetallicMean: (nthMetal: Ordinal) => number =
         )
 
 export {
-    calculateMetallicMean,
+    computeMetallicMean,
 }

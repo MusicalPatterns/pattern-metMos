@@ -9,10 +9,10 @@ import {
     use,
 } from '@musical-patterns/utilities'
 import { TR_0_1, TR_1_1, TR_1_2, TR_1_3 } from './constants'
-import { calculateLevel } from './level'
+import { computeLevel } from './level'
 import { Tree, TreeLevel } from './types'
 
-const calculateTree: (targetLevel: Ordinal<Tree>) => TreeLevel[] =
+const computeTree: (targetLevel: Ordinal<Tree>) => TreeLevel[] =
     (targetLevel: Ordinal<Tree>): TreeLevel[] => {
         const tree: TreeLevel[] = [ [ TR_0_1 ], [ TR_1_1 ], [ TR_1_2 ], [ TR_1_3 ] ]
 
@@ -21,12 +21,12 @@ const calculateTree: (targetLevel: Ordinal<Tree>) => TreeLevel[] =
         }
 
         for (let index: Ordinal<Tree> = THIRD; index < targetLevel; index = use.Cardinal(index, NEXT)) {
-            tree.push(calculateLevel(finalElement(tree)))
+            tree.push(computeLevel(finalElement(tree)))
         }
 
         return tree
     }
 
 export {
-    calculateTree,
+    computeTree,
 }

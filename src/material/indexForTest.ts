@@ -1,11 +1,11 @@
 // tslint:disable no-reaching-imports
 
 export {
-    calculateEquivalencePatterns,
-    calculateGenerator,
-    calculateIntroductions,
-    calculateMetallicMean,
-    calculateTree,
+    computeEquivalencePatterns,
+    computeGenerator,
+    computeIntroductions,
+    computeMetallicMean,
+    computeTree,
     EquivalencePattern,
     PeriodicEquivalencePatternSegment,
     Tree,

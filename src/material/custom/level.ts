@@ -3,7 +3,7 @@
 import { as, getDenominator, getNumerator, sum } from '@musical-patterns/utilities'
 import { TreeLevel, TreeRatio } from './types'
 
-const calculateLevel: (previousLevel: TreeLevel) => TreeLevel =
+const computeLevel: (previousLevel: TreeLevel) => TreeLevel =
     (previousLevel: TreeLevel): TreeLevel => {
         const nextLevel: TreeLevel = []
 
@@ -32,5 +32,5 @@ const calculateLevel: (previousLevel: TreeLevel) => TreeLevel =
     }
 
 export {
-    calculateLevel,
+    computeLevel,
 }

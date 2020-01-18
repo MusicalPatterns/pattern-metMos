@@ -1,10 +1,10 @@
 import { arraySet, as, Fraction, isCloseTo, isUndefined, Maybe, NormalScalar } from '@musical-patterns/utilities'
 import { MET_MOS_PRECISION } from './constants'
-import { calculateGenerator } from './generator'
+import { computeGenerator } from './generator'
 import { isComplementGenerator } from './isComplementGenerator'
 import { DoesIntroduceParams, Equivalence, Generator } from './types'
 
-const calculateNewGenerator: (doesIntroduceParams: DoesIntroduceParams) => void =
+const computeNewGenerator: (doesIntroduceParams: DoesIntroduceParams) => void =
     ({ lean, parent, treeRatio, weight, generators, levelIndex }: DoesIntroduceParams): void => {
         const ratio: Fraction = treeRatio.value
         if (isComplementGenerator({ lean, ratio, parent })) {
@@ -12,7 +12,7 @@ const calculateNewGenerator: (doesIntroduceParams: DoesIntroduceParams) => void 
         }
 
         const equivalence: Equivalence = { lean, parent, ratio, weight }
-        const newValue: Maybe<NormalScalar> = calculateGenerator({ lean, parent, treeRatio, weight })
+        const newValue: Maybe<NormalScalar> = computeGenerator({ lean, parent, treeRatio, weight })
         if (isUndefined(newValue)) {
             return
         }
@@ -33,5 +33,5 @@ const calculateNewGenerator: (doesIntroduceParams: DoesIntroduceParams) => void 
  }
 
 export {
-    calculateNewGenerator,
+    computeNewGenerator,
 }

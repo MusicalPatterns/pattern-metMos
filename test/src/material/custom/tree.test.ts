@@ -1,5 +1,5 @@
 import { as } from '@musical-patterns/utilities'
-import { calculateTree, TR_0_1, TR_1_1, TR_1_2, TR_1_3, Tree, TreeRatio } from '../../../../src/indexForTest'
+import { computeTree, TR_0_1, TR_1_1, TR_1_2, TR_1_3, Tree, TreeRatio } from '../../../../src/indexForTest'
 
 describe('tree', () => {
     const TR_1_4: TreeRatio = {
@@ -35,7 +35,7 @@ describe('tree', () => {
 
     describe('level 0', () => {
         it('contains only 0/1', () => {
-            expect(calculateTree(as.Ordinal<Tree>(0)))
+            expect(computeTree(as.Ordinal<Tree>(0)))
                 .toEqual([
                     [
                         TR_0_1,
@@ -46,7 +46,7 @@ describe('tree', () => {
 
     describe('level 1', () => {
         it('introduces 1/1', () => {
-            expect(calculateTree(as.Ordinal<Tree>(1)))
+            expect(computeTree(as.Ordinal<Tree>(1)))
                 .toEqual([
                     [
                         TR_0_1,
@@ -60,7 +60,7 @@ describe('tree', () => {
 
     describe('level 2', () => {
         it('introduces 1/2', () => {
-            expect(calculateTree(as.Ordinal<Tree>(2)))
+            expect(computeTree(as.Ordinal<Tree>(2)))
                 .toEqual([
                     [
                         TR_0_1,
@@ -77,7 +77,7 @@ describe('tree', () => {
 
     describe('level 3', () => {
         it('introduces 1/3', () => {
-            expect(calculateTree(as.Ordinal<Tree>(3)))
+            expect(computeTree(as.Ordinal<Tree>(3)))
                 .toEqual([
                     [
                         TR_0_1,
@@ -97,7 +97,7 @@ describe('tree', () => {
 
     describe('level 4', () => {
         it('introduces 1/4 and 2/5', () => {
-            expect(calculateTree(as.Ordinal<Tree>(4)))
+            expect(computeTree(as.Ordinal<Tree>(4)))
                 .toEqual([
                     [
                         TR_0_1,
@@ -121,7 +121,7 @@ describe('tree', () => {
 
     describe('level 5', () => {
         it('introduces 1/5, 2/7, 3/8, and 3/7', () => {
-            expect(calculateTree(as.Ordinal<Tree>(5)))
+            expect(computeTree(as.Ordinal<Tree>(5)))
                 .toEqual([
                     [
                         TR_0_1,

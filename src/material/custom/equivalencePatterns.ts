@@ -1,6 +1,6 @@
 import { deepEqual, indexJustBeyondFinalElement, INITIAL, Ordinal, Scalar, slice } from '@musical-patterns/utilities'
-import { calculateGenerators } from './generators'
-import { calculateTree } from './tree'
+import { computeGenerators } from './generators'
+import { computeTree } from './tree'
 import { Equivalence, EquivalencePattern, Generator, Tree } from './types'
 
 const equivalencePatternContainsMaybeNewOne:
@@ -11,7 +11,7 @@ const equivalencePatternContainsMaybeNewOne:
             maybeNewEquivalencePattern,
         )
 
-const calculateMaybeNewEquivalencePattern: (equivalences: Equivalence[]) => EquivalencePattern =
+const computeMaybeNewEquivalencePattern: (equivalences: Equivalence[]) => EquivalencePattern =
     (equivalences: Equivalence[]): EquivalencePattern => {
         const maybeNewEquivalencePattern: EquivalencePattern = []
         equivalences.forEach((equivalence: Equivalence) => {
@@ -44,14 +44,14 @@ const alreadyFoundEquivalencePattern:
         return alreadyFound
     }
 
-const calculateEquivalencePatterns: (targetLevel: Ordinal<Tree>, weights: Scalar[]) => EquivalencePattern[] =
+const computeEquivalencePatterns: (targetLevel: Ordinal<Tree>, weights: Scalar[]) => EquivalencePattern[] =
     (targetLevel: Ordinal<Tree>, weights: Scalar[]): EquivalencePattern[] => {
-        const generators: Generator[] = calculateGenerators(calculateTree(targetLevel), weights)
+        const generators: Generator[] = computeGenerators(computeTree(targetLevel), weights)
 
         const equivalencePatterns: EquivalencePattern[] = []
 
         generators.forEach(({ equivalences }: Generator) => {
-            const maybeNewEquivalencePattern: EquivalencePattern = calculateMaybeNewEquivalencePattern(equivalences)
+            const maybeNewEquivalencePattern: EquivalencePattern = computeMaybeNewEquivalencePattern(equivalences)
 
             if (!alreadyFoundEquivalencePattern(equivalencePatterns, maybeNewEquivalencePattern)) {
                 equivalencePatterns.push(maybeNewEquivalencePattern)
@@ -62,5 +62,5 @@ const calculateEquivalencePatterns: (targetLevel: Ordinal<Tree>, weights: Scalar
     }
 
 export {
-    calculateEquivalencePatterns,
+    computeEquivalencePatterns,
 }

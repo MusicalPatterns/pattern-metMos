@@ -12,8 +12,8 @@ import { TR_0_1, TR_1_1, TR_1_2, TR_1_3 } from './constants'
 import { computeLevel } from './level'
 import { Tree, TreeLevel, TreeRatio } from './types'
 
-const computeTreeRatio: (ratio: Fraction) => TreeRatio =
-    (ratio: Fraction): TreeRatio => {
+const computeTreeRatio: (ratio: Fraction) => Maybe<TreeRatio> =
+    (ratio: Fraction): Maybe<TreeRatio> => {
         let treeRatio: Maybe<TreeRatio> = undefined
         const tree: TreeLevel[] = [ [ TR_0_1 ], [ TR_1_1 ], [ TR_1_2 ], [ TR_1_3 ] ]
 
@@ -22,7 +22,7 @@ const computeTreeRatio: (ratio: Fraction) => TreeRatio =
                 tree.push(computeLevel(finalElement(tree)))
             }
             else {
-                throw new Error('Could not find ratio in first 10 levels of tree.')
+                break
             }
 
             tree.forEach((level: TreeLevel) => {

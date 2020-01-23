@@ -1,0 +1,148 @@
+{
+  "segnoTime": 0,
+  "totalDuration": 6000,
+  "voices": [
+    {
+      "delay": 0,
+      "sounds": [
+        {
+          "duration": 500,
+          "gain": 1,
+          "tone": 220,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 400
+        },
+        {
+          "duration": 500,
+          "gain": 1,
+          "tone": 231.10866,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 400
+        },
+        {
+          "duration": 500,
+          "gain": 1,
+          "tone": 242.77824,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 400
+        },
+        {
+          "duration": 500,
+          "gain": 1,
+          "tone": 260.29439,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 400
+        },
+        {
+          "duration": 500,
+          "gain": 1,
+          "tone": 273.43767,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 400
+        },
+        {
+          "duration": 500,
+          "gain": 1,
+          "tone": 293.16586,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 400
+        },
+        {
+          "duration": 500,
+          "gain": 1,
+          "tone": 307.96895,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 400
+        },
+        {
+          "duration": 500,
+          "gain": 1,
+          "tone": 323.51951,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 400
+        },
+        {
+          "duration": 500,
+          "gain": 1,
+          "tone": 346.86103,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 400
+        },
+        {
+          "duration": 500,
+          "gain": 1,
+          "tone": 364.37541,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 400
+        },
+        {
+          "duration": 500,
+          "gain": 1,
+          "tone": 390.66463,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 400
+        },
+        {
+          "duration": 500,
+          "gain": 1,
+          "tone": 410.39082,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 400
+        }
+      ],
+      "sourceRequest": {
+        "sourceType": "OSCILLATOR",
+        "timbreName": "BRIT_BLUES_DRIVEN"
+      },
+      "segnoIndex": 0
+    }
+  ]
+}

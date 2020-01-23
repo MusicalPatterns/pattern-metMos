@@ -1,0 +1,93 @@
+{
+  "segnoTime": 0,
+  "totalDuration": 3500,
+  "voices": [
+    {
+      "delay": 0,
+      "sounds": [
+        {
+          "duration": 500,
+          "gain": 1,
+          "tone": 220,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 400
+        },
+        {
+          "duration": 500,
+          "gain": 1,
+          "tone": 247.78286,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 400
+        },
+        {
+          "duration": 500,
+          "gain": 1,
+          "tone": 269.52082,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 400
+        },
+        {
+          "duration": 500,
+          "gain": 1,
+          "tone": 303.55746,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 400
+        },
+        {
+          "duration": 500,
+          "gain": 1,
+          "tone": 330.18852,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 400
+        },
+        {
+          "duration": 500,
+          "gain": 1,
+          "tone": 371.88662,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 400
+        },
+        {
+          "duration": 500,
+          "gain": 1,
+          "tone": 404.51219,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 400
+        }
+      ],
+      "sourceRequest": {
+        "sourceType": "OSCILLATOR",
+        "timbreName": "BRIT_BLUES_DRIVEN"
+      },
+      "segnoIndex": 0
+    }
+  ]
+}

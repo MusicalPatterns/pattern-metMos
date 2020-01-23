@@ -32,8 +32,19 @@ interface MetMosConfigurations extends Configurations {
     [ MetMosSpec.ISOTOPE ]: RangedConfiguration,
 }
 
+enum MetMosPreset {
+    GOLDEN_MEANTONE = 'GOLDEN_MEANTONE',
+    WILSON_PEPPER_FIFTH = 'WILSON_PEPPER_FIFTH',
+    ARGENT_TEMPERAMENT = 'ARGENT_TEMPERAMENT',
+    IMAGINARY = 'IMAGINARY',
+    FIBONACCI = 'FIBONACCI',
+    LUCAS = 'LUCAS',
+    HANSON = 'HANSON',
+}
+
 export {
     MetMosSpecs,
     MetMosSpec,
     MetMosConfigurations,
+    MetMosPreset,
 }

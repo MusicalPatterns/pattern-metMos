@@ -5,7 +5,10 @@ import { computeGenerator, computeIsotope, computeMos, computeTreeRatio, TreeRat
 const computeMosScalars: (specs: MetMosSpecs) => Array<Scalar<Pitch>> =
     ({ lean, parent, ratio, iterations, period, metal, isotope }: MetMosSpecs): Array<Scalar<Pitch>> => {
         const weight: Scalar = computeIsotope({ metalIndex: metal, isotopeIndex: isotope })
-        const treeRatio: TreeRatio = computeTreeRatio(ratio)
+        const treeRatio: Maybe<TreeRatio> = computeTreeRatio(ratio)
+        if (!treeRatio) {
+            return []
+        }
         const generator: Maybe<NormalScalar> = computeGenerator({ lean, parent, weight, treeRatio })
         if (!generator) {
             return []

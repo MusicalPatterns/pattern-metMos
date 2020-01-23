@@ -27,4 +27,10 @@ export {
     _0_MU_3,
     MET_MOS_PRECISION,
 } from './material/indexForTest'
+export {
+    computeValidations,
+    initialSpecs,
+    MetMosSpec,
+    MetMosSpecs,
+} from './spec/indexForTest'
 export { Lean, Parent } from './types'

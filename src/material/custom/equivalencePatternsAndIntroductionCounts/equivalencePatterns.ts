@@ -1,7 +1,7 @@
 import { deepEqual, indexJustBeyondFinalElement, INITIAL, Ordinal, Scalar, slice } from '@musical-patterns/utilities'
-import { computeGenerators } from './generators'
-import { computeTree } from './tree'
-import { Equivalence, EquivalencePattern, Generator, Tree } from './types'
+import { Equivalence, Generator, Tree } from '../types'
+import { computeGeneratorsAndIntroductionCounts } from './generatorsAndIntroductionCounts'
+import { EquivalencePattern } from './types'
 
 const equivalencePatternContainsMaybeNewOne:
     (foundEquivalencePattern: EquivalencePattern, maybeNewEquivalencePattern: EquivalencePattern) => boolean =
@@ -46,7 +46,7 @@ const alreadyFoundEquivalencePattern:
 
 const computeEquivalencePatterns: (targetLevel: Ordinal<Tree>, weights: Scalar[]) => EquivalencePattern[] =
     (targetLevel: Ordinal<Tree>, weights: Scalar[]): EquivalencePattern[] => {
-        const generators: Generator[] = computeGenerators(computeTree(targetLevel), weights)
+        const generators: Generator[] = computeGeneratorsAndIntroductionCounts(targetLevel, weights).generators
 
         const equivalencePatterns: EquivalencePattern[] = []
 

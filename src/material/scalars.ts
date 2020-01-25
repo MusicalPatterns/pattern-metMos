@@ -1,10 +1,10 @@
 import { as, Exponent, Frequency, Maybe, NormalScalar, Pitch, pow, Scalar } from '@musical-patterns/utilities'
 import { MetMosSpecs } from '../spec'
-import { computeGenerator, computeIsotope, computeMos, computeTreeRatio, TreeRatio } from './custom'
+import { computeGenerator, computeMetallicValue, computeMos, computeTreeRatio, TreeRatio } from './custom'
 
 const computeMosScalars: (specs: MetMosSpecs) => Array<Scalar<Pitch>> =
     ({ lean, parent, ratio, iterations, period, metal, isotope }: MetMosSpecs): Array<Scalar<Pitch>> => {
-        const weight: Scalar = computeIsotope({ metalIndex: metal, isotopeIndex: isotope })
+        const weight: Scalar = as.Scalar(computeMetallicValue({ metalIndex: metal, isotopeIndex: isotope }))
         const treeRatio: Maybe<TreeRatio> = computeTreeRatio(ratio)
         if (!treeRatio) {
             return []

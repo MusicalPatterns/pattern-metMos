@@ -3,11 +3,10 @@
 export {
     computeEquivalencePatterns,
     computeGenerator,
-    computeIntroductions,
-    computeMetallicMean,
+    computeGeneratorsAndIntroductionCounts,
     computeTree,
     computeMos,
-    computeIsotope,
+    computeMetallicValue,
     EquivalencePattern,
     PeriodicEquivalencePatternSegment,
     Tree,

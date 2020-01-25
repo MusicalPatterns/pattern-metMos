@@ -1,5 +1,5 @@
 import { asFraction, deepEqual, Fraction, TWO } from '@musical-patterns/utilities'
-import { Lean, Parent } from '../../types'
+import { Lean, Parent } from '../../../types'
 
 const isComplementGenerator: (isExceptionParams: { lean: Lean, parent: Parent, ratio: Fraction }) => boolean =
     ({ lean, parent, ratio }: { lean: Lean, parent: Parent, ratio: Fraction }): boolean => {

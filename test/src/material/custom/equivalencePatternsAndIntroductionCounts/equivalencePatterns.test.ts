@@ -20,13 +20,13 @@ import {
     _2_MU_3,
     _3_MU_3,
     computeEquivalencePatterns,
-    computeMetallicMean,
+    computeMetallicValue,
     EquivalencePattern,
     Lean,
     Parent,
     PeriodicEquivalencePatternSegment,
     Tree,
-} from '../../../../src/indexForTest'
+} from '../../../../../src/indexForTest'
 
 describe('equivalence patterns - given a target level and list of means and/or isotopes, gives all unique equivalence patterns for the resultant generators', () => {
     const repeatEnoughTimes: Cardinal<EquivalencePattern> = as.Cardinal<EquivalencePattern>(9)
@@ -342,7 +342,7 @@ describe('equivalence patterns - given a target level and list of means and/or i
 
     describe('fourth metallic mean and isotopes', () => {
         let equivalencePatterns: EquivalencePattern[]
-        const _4_MU_4: number = computeMetallicMean(as.Ordinal(4))
+        const _4_MU_4: number = computeMetallicValue({ metalIndex: as.Ordinal(4) })
         const _3_MU_4: number = _4_MU_4 - 1
         const _2_MU_4: number = _3_MU_4 - 1
         const _1_MU_4: number = _2_MU_4 - 1

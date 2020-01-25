@@ -1,16 +1,7 @@
-import {
-    as,
-    computeLength,
-    deepEqual,
-    finalElement,
-    Fraction,
-    isUndefined,
-    Maybe,
-    TEN,
-} from '@musical-patterns/utilities'
-import { TR_0_1, TR_1_1, TR_1_2, TR_1_3 } from './constants'
+import { computeLength, deepEqual, finalElement, Fraction, isUndefined, Maybe } from '@musical-patterns/utilities'
+import { MAX_LEVEL, TR_0_1, TR_1_1, TR_1_2, TR_1_3 } from './constants'
 import { computeLevel } from './level'
-import { Tree, TreeLevel, TreeRatio } from './types'
+import { TreeLevel, TreeRatio } from './types'
 
 const computeTreeRatio: (ratio: Fraction) => Maybe<TreeRatio> =
     (ratio: Fraction): Maybe<TreeRatio> => {
@@ -18,7 +9,7 @@ const computeTreeRatio: (ratio: Fraction) => Maybe<TreeRatio> =
         const tree: TreeLevel[] = [ [ TR_0_1 ], [ TR_1_1 ], [ TR_1_2 ], [ TR_1_3 ] ]
 
         while (isUndefined(treeRatio)) {
-            if (computeLength(tree) < as.Cardinal<Tree>(TEN)) {
+            if (computeLength(tree) < MAX_LEVEL) {
                 tree.push(computeLevel(finalElement(tree)))
             }
             else {
@@ -26,9 +17,9 @@ const computeTreeRatio: (ratio: Fraction) => Maybe<TreeRatio> =
             }
 
             tree.forEach((level: TreeLevel) => {
-                level.forEach((tr: TreeRatio) => {
-                    if (deepEqual(tr.value, ratio)) {
-                        treeRatio = tr
+                level.forEach((potentialTreeRatio: TreeRatio) => {
+                    if (deepEqual(potentialTreeRatio.value, ratio)) {
+                        treeRatio = potentialTreeRatio
                     }
                 })
             })

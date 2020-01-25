@@ -1,6 +1,6 @@
 export { TreeLevel,  Tree, TreeRatio } from './types'
 export { computeMos } from './mos'
 export { computeGenerator } from './generator'
-export { computeIsotope } from './isotope'
+export { computeMetallicValue } from './metallicValue'
 export { computeTreeRatio } from './treeRatio'
 export { computeTree } from './tree'

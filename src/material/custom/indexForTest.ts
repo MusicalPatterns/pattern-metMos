@@ -16,11 +16,14 @@ export {
     _0_MU_3,
     MET_MOS_PRECISION,
 } from './constants'
-export { computeEquivalencePatterns } from './equivalencePatterns'
+export {
+    computeGeneratorsAndIntroductionCounts,
+    computeEquivalencePatterns,
+    EquivalencePattern,
+    PeriodicEquivalencePatternSegment,
+} from './equivalencePatternsAndIntroductionCounts/indexForTest'
 export { computeGenerator } from './generator'
-export { computeIntroductions } from './introductions'
-export { computeMetallicMean } from './metallicMean'
 export { computeTree } from './tree'
 export { computeMos } from './mos'
-export { computeIsotope } from './isotope'
-export { Tree, TreeRatio, EquivalencePattern, PeriodicEquivalencePatternSegment } from './types'
+export { computeMetallicValue } from './metallicValue'
+export { Tree, TreeRatio } from './types'

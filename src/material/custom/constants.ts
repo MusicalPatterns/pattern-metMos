@@ -1,7 +1,7 @@
 // tslint:disable no-magic-numbers
 
-import { asFraction } from '@musical-patterns/utilities'
-import { TreeRatio } from './types'
+import { as, asFraction, Cardinal } from '@musical-patterns/utilities'
+import { Tree, TreeRatio } from './types'
 
 const MET_MOS_PRECISION: number = 14
 
@@ -36,6 +36,8 @@ const _2_MU_3: number = 2.302775637731995
 const _1_MU_3: number = 1.302775637731995
 const _0_MU_3: number = 0.302775637731995
 
+const MAX_LEVEL: Cardinal<Tree> = as.Cardinal<Tree>(10)
+
 export {
     TR_0_1,
     TR_1_1,
@@ -51,4 +53,5 @@ export {
     _1_MU_3,
     _0_MU_3,
     MET_MOS_PRECISION,
+    MAX_LEVEL,
 }

@@ -1,5 +1,5 @@
 import { ComputeValidations, Validation, Validations } from '@musical-patterns/spec'
-import { as, Fraction, isUndefined, Ordinal } from '@musical-patterns/utilities'
+import { as, isUndefined, Ordinal, Rational } from '@musical-patterns/utilities'
 import { computeTreeRatio } from '../material'
 import { GENERATOR_COMPLEMENT_LIMIT } from './constants'
 import { MetMosSpec, MetMosSpecs } from './types'
@@ -13,8 +13,8 @@ const validateIsotope: (validateIsotopeParams: { isotope: Ordinal, metal: Ordina
         return undefined
     }
 
-const validateRatio: (ratio: Fraction) => Validation =
-    (ratio: Fraction): Validation => {
+const validateRatio: (ratio: Rational) => Validation =
+    (ratio: Rational): Validation => {
         if (as.number(ratio) > GENERATOR_COMPLEMENT_LIMIT && as.number(ratio) !== 1) {
             return 'must be <= 1/2 or 1/1'
         }

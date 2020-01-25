@@ -1,10 +1,10 @@
-import { computeLength, deepEqual, finalElement, Fraction, isUndefined, Maybe } from '@musical-patterns/utilities'
+import { computeLength, deepEqual, finalElement, isUndefined, Maybe, Rational } from '@musical-patterns/utilities'
 import { MAX_LEVEL, TR_0_1, TR_1_1, TR_1_2, TR_1_3 } from './constants'
 import { computeLevel } from './level'
 import { TreeLevel, TreeRatio } from './types'
 
-const computeTreeRatio: (ratio: Fraction) => Maybe<TreeRatio> =
-    (ratio: Fraction): Maybe<TreeRatio> => {
+const computeTreeRatio: (ratio: Rational) => Maybe<TreeRatio> =
+    (ratio: Rational): Maybe<TreeRatio> => {
         let treeRatio: Maybe<TreeRatio> = undefined
         const tree: TreeLevel[] = [ [ TR_0_1 ], [ TR_1_1 ], [ TR_1_2 ], [ TR_1_3 ] ]
 

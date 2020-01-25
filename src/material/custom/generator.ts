@@ -1,12 +1,12 @@
 import {
     as,
-    Fraction,
     getDenominator,
     getNumerator,
     isUndefined,
     Maybe,
     NormalScalar,
     quotient,
+    Rational,
     sum,
     use,
 } from '@musical-patterns/utilities'
@@ -22,8 +22,8 @@ const computeGenerator: (computeGeneratorParams: ComputeGeneratorParams) => Mayb
             return undefined
         }
 
-        let weightedRatio: Fraction
-        let unweightedRatio: Fraction
+        let weightedRatio: Rational
+        let unweightedRatio: Rational
         if (lean === Lean.PARENTWARD) {
             weightedRatio = parentTreeRatio.value
             unweightedRatio = treeRatio.value

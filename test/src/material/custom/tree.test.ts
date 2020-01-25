@@ -1,36 +1,36 @@
-import { as, asFraction } from '@musical-patterns/utilities'
+import { as, asRational } from '@musical-patterns/utilities'
 import { computeTree, TR_0_1, TR_1_1, TR_1_2, TR_1_3, Tree, TreeRatio } from '../../../../src/indexForTest'
 
 describe('tree', () => {
     const TR_1_4: TreeRatio = {
         parentGreater: TR_1_3,
         parentLesser: TR_0_1,
-        value: asFraction(1, 4),
+        value: asRational(1, 4),
     }
     const TR_2_5: TreeRatio = {
         parentGreater: TR_1_2,
         parentLesser: TR_1_3,
-        value: asFraction(2, 5),
+        value: asRational(2, 5),
     }
     const TR_1_5: TreeRatio = {
         parentGreater: TR_1_4,
         parentLesser: TR_0_1,
-        value: asFraction(1, 5),
+        value: asRational(1, 5),
     }
     const TR_2_7: TreeRatio = {
         parentGreater: TR_1_3,
         parentLesser: TR_1_4,
-        value: asFraction(2, 7),
+        value: asRational(2, 7),
     }
     const TR_3_8: TreeRatio = {
         parentGreater: TR_2_5,
         parentLesser: TR_1_3,
-        value: asFraction(3, 8),
+        value: asRational(3, 8),
     }
     const TR_3_7: TreeRatio = {
         parentGreater: TR_1_2,
         parentLesser: TR_2_5,
-        value: asFraction(3, 7),
+        value: asRational(3, 7),
     }
 
     describe('level 0', () => {

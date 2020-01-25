@@ -1,6 +1,6 @@
 // tslint:disable no-magic-numbers
 
-import { as, asFraction, Cardinal } from '@musical-patterns/utilities'
+import { as, asRational, Cardinal } from '@musical-patterns/utilities'
 import { Tree, TreeRatio } from './types'
 
 const MET_MOS_PRECISION: number = 14
@@ -8,22 +8,22 @@ const MET_MOS_PRECISION: number = 14
 const TR_0_1: TreeRatio = {
     parentGreater: undefined,
     parentLesser: undefined,
-    value: asFraction(0, 1),
+    value: asRational(0, 1),
 }
 const TR_1_1: TreeRatio = {
     parentGreater: undefined,
     parentLesser: TR_0_1,
-    value: asFraction(1, 1),
+    value: asRational(1, 1),
 }
 const TR_1_2: TreeRatio = {
     parentGreater: TR_1_1,
     parentLesser: TR_0_1,
-    value: asFraction(1, 2),
+    value: asRational(1, 2),
 }
 const TR_1_3: TreeRatio = {
     parentGreater: TR_1_2,
     parentLesser: TR_0_1,
-    value: asFraction(1, 3),
+    value: asRational(1, 3),
 }
 
 const _1_MU_1: number = 1.618033988749895

@@ -1,10 +1,10 @@
-import { Cardinal, Cycle, Fraction, Maybe, NormalScalar, Ordinal, Scalar } from '@musical-patterns/utilities'
+import { Cardinal, Cycle, Maybe, NormalScalar, Ordinal, Rational, Scalar } from '@musical-patterns/utilities'
 import { Lean, Parent } from '../../types'
 
 interface TreeRatio {
     parentGreater: Maybe<TreeRatio>,
     parentLesser: Maybe<TreeRatio>,
-    value: Fraction,
+    value: Rational,
 }
 
 type TreeLevel = TreeRatio[]
@@ -22,7 +22,7 @@ interface ComputeGeneratorParams extends RatioOptions {
 }
 
 interface Equivalence extends RatioOptions {
-    ratio: Fraction,
+    ratio: Rational,
 }
 
 interface Generator {

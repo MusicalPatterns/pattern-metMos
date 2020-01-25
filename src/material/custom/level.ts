@@ -11,7 +11,7 @@ const computeLevel: (previousLevel: TreeLevel) => TreeLevel =
             const newLesserTreeRatio: TreeRatio = {
                 parentGreater: treeRatio,
                 parentLesser: treeRatio.parentLesser,
-                value: as.Fraction([
+                value: as.Rational([
                     sum(getNumerator(treeRatio.value), getNumerator(treeRatio.parentLesser!.value)),
                     sum(getDenominator(treeRatio.value), getDenominator(treeRatio.parentLesser!.value)),
                 ]),
@@ -19,7 +19,7 @@ const computeLevel: (previousLevel: TreeLevel) => TreeLevel =
             const newGreaterTreeRatio: TreeRatio = {
                 parentGreater: treeRatio.parentGreater,
                 parentLesser: treeRatio,
-                value: as.Fraction([
+                value: as.Rational([
                     sum(getNumerator(treeRatio.value), getNumerator(treeRatio.parentGreater!.value)),
                     sum(getDenominator(treeRatio.value), getDenominator(treeRatio.parentGreater!.value)),
                 ]),

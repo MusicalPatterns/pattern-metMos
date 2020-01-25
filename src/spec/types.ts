@@ -1,5 +1,5 @@
 import { Configurations, OptionedConfiguration, RangedConfiguration, Specs } from '@musical-patterns/spec'
-import { Cardinal, Fraction, Frequency, Logarithm, Ordinal } from '@musical-patterns/utilities'
+import { Cardinal, Frequency, Logarithm, Ordinal, Rational } from '@musical-patterns/utilities'
 import { Lean, Parent } from '../types'
 
 enum MetMosSpec {
@@ -15,7 +15,7 @@ enum MetMosSpec {
 interface MetMosSpecs extends Specs {
     [ MetMosSpec.ITERATIONS ]: Cardinal,
     [ MetMosSpec.PERIOD ]: Logarithm<Frequency>,
-    [ MetMosSpec.RATIO ]: Fraction,
+    [ MetMosSpec.RATIO ]: Rational,
     [ MetMosSpec.LEAN ]: Lean,
     [ MetMosSpec.PARENT ]: Parent,
     [ MetMosSpec.METAL ]: Ordinal,

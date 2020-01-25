@@ -2,7 +2,6 @@ import {
     arraySet,
     as,
     Cardinal,
-    Fraction,
     INCREMENT,
     isCloseTo,
     isUndefined,
@@ -10,6 +9,7 @@ import {
     Maybe,
     NormalScalar,
     Ordinal,
+    Rational,
     Scalar,
     use,
 } from '@musical-patterns/utilities'
@@ -34,7 +34,7 @@ const computeGeneratorsAndIntroductionCounts:
                 let levelIntroductions: Cardinal = as.Cardinal(0)
 
                 level.forEach((treeRatio: TreeRatio) => {
-                    const ratio: Fraction = treeRatio.value
+                    const ratio: Rational = treeRatio.value
                     Object.values(Lean)
                         .forEach((lean: Lean) => {
                             Object.values(Parent)

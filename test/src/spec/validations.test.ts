@@ -1,7 +1,7 @@
 // tslint:disable no-duplicate-string
 
 import { Validations } from '@musical-patterns/spec'
-import { as, asFraction } from '@musical-patterns/utilities'
+import { as, asRational } from '@musical-patterns/utilities'
 import { computeValidations, initialSpecs, MetMosSpec, MetMosSpecs } from '../../../src/indexForTest'
 
 describe('validations', () => {
@@ -53,7 +53,7 @@ describe('validations', () => {
         it('must be less than 1/2 (> 1/2 are complement generators)', () => {
             const specs: MetMosSpecs = {
                 ...initialSpecs,
-                [ MetMosSpec.RATIO ]: asFraction(3, 5),
+                [ MetMosSpec.RATIO ]: asRational(3, 5),
             }
 
             const validations: Validations<MetMosSpecs> = computeValidations(specs)
@@ -67,7 +67,7 @@ describe('validations', () => {
         it('must be found in the top ten levels of the tree', () => {
             const specs: MetMosSpecs = {
                 ...initialSpecs,
-                [ MetMosSpec.RATIO ]: asFraction(1575, 4646),
+                [ MetMosSpec.RATIO ]: asRational(1575, 4646),
             }
 
             const validations: Validations<MetMosSpecs> = computeValidations(specs)

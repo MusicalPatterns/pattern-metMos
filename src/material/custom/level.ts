@@ -7,7 +7,7 @@ const computeLevel: (previousLevel: TreeLevel) => TreeLevel =
     (previousLevel: TreeLevel): TreeLevel => {
         const nextLevel: TreeLevel = []
 
-        previousLevel.forEach((treeRatio: TreeRatio) => {
+        previousLevel.forEach((treeRatio: TreeRatio): void => {
             const newLesserTreeRatio: TreeRatio = {
                 parentGreater: treeRatio,
                 parentLesser: treeRatio.parentLesser,

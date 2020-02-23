@@ -1,7 +1,7 @@
 import { as, asRational } from '@musical-patterns/utilities'
-import { computeTree, TR_0_1, TR_1_1, TR_1_2, TR_1_3, Tree, TreeRatio } from '../../../../src/indexForTest'
+import { computeTree, Tree, TreeRatio, TR_0_1, TR_1_1, TR_1_2, TR_1_3 } from '../../../../src/indexForTest'
 
-describe('tree', () => {
+describe('tree', (): void => {
     const TR_1_4: TreeRatio = {
         parentGreater: TR_1_3,
         parentLesser: TR_0_1,
@@ -33,8 +33,8 @@ describe('tree', () => {
         value: asRational(3, 7),
     }
 
-    describe('level 0', () => {
-        it('contains only 0/1', () => {
+    describe('level 0', (): void => {
+        it('contains only 0/1', (): void => {
             expect(computeTree(as.Ordinal<Tree>(0)))
                 .toEqual([
                     [
@@ -44,8 +44,8 @@ describe('tree', () => {
         })
     })
 
-    describe('level 1', () => {
-        it('introduces 1/1', () => {
+    describe('level 1', (): void => {
+        it('introduces 1/1', (): void => {
             expect(computeTree(as.Ordinal<Tree>(1)))
                 .toEqual([
                     [
@@ -58,8 +58,8 @@ describe('tree', () => {
         })
     })
 
-    describe('level 2', () => {
-        it('introduces 1/2', () => {
+    describe('level 2', (): void => {
+        it('introduces 1/2', (): void => {
             expect(computeTree(as.Ordinal<Tree>(2)))
                 .toEqual([
                     [
@@ -75,8 +75,8 @@ describe('tree', () => {
         })
     })
 
-    describe('level 3', () => {
-        it('introduces 1/3', () => {
+    describe('level 3', (): void => {
+        it('introduces 1/3', (): void => {
             expect(computeTree(as.Ordinal<Tree>(3)))
                 .toEqual([
                     [
@@ -95,8 +95,8 @@ describe('tree', () => {
         })
     })
 
-    describe('level 4', () => {
-        it('introduces 1/4 and 2/5', () => {
+    describe('level 4', (): void => {
+        it('introduces 1/4 and 2/5', (): void => {
             expect(computeTree(as.Ordinal<Tree>(4)))
                 .toEqual([
                     [
@@ -119,8 +119,8 @@ describe('tree', () => {
         })
     })
 
-    describe('level 5', () => {
-        it('introduces 1/5, 2/7, 3/8, and 3/7', () => {
+    describe('level 5', (): void => {
+        it('introduces 1/5, 2/7, 3/8, and 3/7', (): void => {
             expect(computeTree(as.Ordinal<Tree>(5)))
                 .toEqual([
                     [

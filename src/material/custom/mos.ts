@@ -31,7 +31,7 @@ const computeMos: (generator: NormalScalar, iterations: Cardinal) => Array<Expon
             currentGeneratorPositions.push(as.Point(as.number(currentGeneratorPosition)))
 
             const deltas: Delta[] = computeDeltas([ ...currentGeneratorPositions.sort(), as.Point(1) ])
-                .map((delta: Delta) => round(delta, TEN))
+                .map((delta: Delta): Delta => round(delta, TEN))
 
             const uniqueDeltas: Delta[] = filter(deltas, uniqueFilter)
             if (computeLength(uniqueDeltas) === as.Cardinal<Delta[]>(TWO)) {
@@ -40,7 +40,9 @@ const computeMos: (generator: NormalScalar, iterations: Cardinal) => Array<Expon
         }
 
         return currentGeneratorPositions.sort()
-            .map((generatorPosition: Point) => as.Exponent<Frequency>(as.number(generatorPosition)))
+            .map(
+                (generatorPosition: Point): Exponent<Frequency> => as.Exponent<Frequency>(as.number(generatorPosition)),
+            )
     }
 
 export {

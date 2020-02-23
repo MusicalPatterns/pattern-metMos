@@ -1,17 +1,17 @@
 import { as } from '@musical-patterns/utilities'
 import {
+    computeMetallicValue,
+    MET_MOS_PRECISION,
     _0_MU_1,
     _0_MU_2,
     _1_MU_1,
     _1_MU_2,
     _2_MU_2,
     _3_MU_3,
-    computeMetallicValue,
-    MET_MOS_PRECISION,
 } from '../../../../src/indexForTest'
 
-describe('compute metallic value', () => {
-    it('gives the correct value of the nth metallic mean', () => {
+describe('compute metallic value', (): void => {
+    it('gives the correct value of the nth metallic mean', (): void => {
         expect(computeMetallicValue({ metalIndex: as.Ordinal(1) }))
             .toBeCloseTo(_1_MU_1, MET_MOS_PRECISION)
         expect(computeMetallicValue({ metalIndex: as.Ordinal(2) }))
@@ -30,7 +30,7 @@ describe('compute metallic value', () => {
             .toBeCloseTo(8.12310562561766, MET_MOS_PRECISION)
     })
 
-    it('given a metal index and an isotope index, returns the correct value', () => {
+    it('given a metal index and an isotope index, returns the correct value', (): void => {
         expect(computeMetallicValue({ metalIndex: as.Ordinal(1), isotopeIndex: as.Ordinal(0) }))
             .toBeCloseTo(_1_MU_1, MET_MOS_PRECISION)
         expect(computeMetallicValue({ metalIndex: as.Ordinal(1), isotopeIndex: as.Ordinal(1) }))

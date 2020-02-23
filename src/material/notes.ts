@@ -9,7 +9,7 @@ const computeNotes: (specs: MetMosSpecs) => Note[] =
         const scalars: Array<Scalar<Pitch>> = computeMosScalars(specs)
 
         return range(computeLength(scalars))
-            .map((integer: Integer) => computeNote(as.ContourElement([ integer ])))
+            .map((integer: Integer): Note => computeNote(as.ContourElement([ integer ])))
     }
 
 export {

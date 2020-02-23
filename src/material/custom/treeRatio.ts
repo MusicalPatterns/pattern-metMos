@@ -16,8 +16,8 @@ const computeTreeRatio: (ratio: Rational) => Maybe<TreeRatio> =
                 break
             }
 
-            tree.forEach((level: TreeLevel) => {
-                level.forEach((potentialTreeRatio: TreeRatio) => {
+            tree.forEach((level: TreeLevel): void => {
+                level.forEach((potentialTreeRatio: TreeRatio): void => {
                     if (deepEqual(potentialTreeRatio.value, ratio)) {
                         treeRatio = potentialTreeRatio
                     }

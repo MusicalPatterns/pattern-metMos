@@ -1,8 +1,8 @@
 import { as, NormalScalar } from '@musical-patterns/utilities'
 import { computeMos } from '../../../../src/indexForTest'
 
-describe('moment of symmetry scales', () => {
-    it('given a generator and an iterations count, returns that iteration of the MOS scales for that generator', () => {
+describe('moment of symmetry scales', (): void => {
+    it('given a generator and an iterations count, returns that iteration of the MOS scales for that generator', (): void => {
         const generator: NormalScalar = as.NormalScalar(5 / 12)
 
         expect(computeMos(generator, as.Cardinal(1)))

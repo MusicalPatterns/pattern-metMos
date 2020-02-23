@@ -1,4 +1,4 @@
-import { as, FOUR, Ordinal, quotient, Scalar, SQUARE_ROOT, SQUARED, sum, TWO, use } from '@musical-patterns/utilities'
+import { as, FOUR, Ordinal, quotient, Scalar, SQUARED, SQUARE_ROOT, sum, TWO, use } from '@musical-patterns/utilities'
 
 const computeMetallicValue: (computeMetallicValueParams: { isotopeIndex?: Ordinal, metalIndex?: Ordinal }) => number =
     ({

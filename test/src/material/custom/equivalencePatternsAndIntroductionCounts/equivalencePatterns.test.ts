@@ -13,12 +13,6 @@ import {
     use,
 } from '@musical-patterns/utilities'
 import {
-    _1_MU_1,
-    _1_MU_2,
-    _1_MU_3,
-    _2_MU_2,
-    _2_MU_3,
-    _3_MU_3,
     computeEquivalencePatterns,
     computeMetallicValue,
     EquivalencePattern,
@@ -26,9 +20,15 @@ import {
     Parent,
     PeriodicEquivalencePatternSegment,
     Tree,
+    _1_MU_1,
+    _1_MU_2,
+    _1_MU_3,
+    _2_MU_2,
+    _2_MU_3,
+    _3_MU_3,
 } from '../../../../../src/indexForTest'
 
-describe('equivalence patterns - given a target level and list of means and/or isotopes, gives all unique equivalence patterns for the resultant generators', () => {
+describe('equivalence patterns - given a target level and list of means and/or isotopes, gives all unique equivalence patterns for the resultant generators', (): void => {
     const repeatEnoughTimes: Cardinal<EquivalencePattern> = as.Cardinal<EquivalencePattern>(9)
 
     const expectToEqualSoFar: <T>(actual: T[], expected: T[]) => void =
@@ -42,20 +42,20 @@ describe('equivalence patterns - given a target level and list of means and/or i
         (equivalencePatterns: EquivalencePattern[], expectedPeriodicEquivalencePatternSegment: PeriodicEquivalencePatternSegment): void => {
             expect(every(
                 equivalencePatterns,
-                (equivalencePattern: EquivalencePattern) =>
+                (equivalencePattern: EquivalencePattern): boolean =>
                     computeLength(equivalencePattern) > computeLength(expectedPeriodicEquivalencePatternSegment),
             ))
                 .toBeTrue()
         }
 
-    describe('golden mean', () => {
+    describe('golden mean', (): void => {
         let equivalencePatterns: EquivalencePattern[]
         const expectedPeriodicEquivalencePatternSegment: PeriodicEquivalencePatternSegment = as.Cycle([
             { lean: Lean.CHILDWARD, parent: Parent.LESSER, weight: as.Scalar(_1_MU_1) },
             { lean: Lean.CHILDWARD, parent: Parent.GREATER, weight: as.Scalar(_1_MU_1) },
         ])
 
-        beforeAll(() => {
+        beforeAll((): void => {
             equivalencePatterns = computeEquivalencePatterns(
                 as.Ordinal<Tree>(5),
                 [ _1_MU_1 ].map(as.Scalar),
@@ -67,12 +67,12 @@ describe('equivalence patterns - given a target level and list of means and/or i
             )
         })
 
-        it('has two possible equivalence patterns', () => {
+        it('has two possible equivalence patterns', (): void => {
             expect(computeLength(equivalencePatterns))
                 .toBe(as.Cardinal<EquivalencePattern[]>(2))
         })
 
-        it('has one equivalence pattern for each mean and isotope which begins with parentward & the lesser parent (in the interval 0/1 to 1/1)', () => {
+        it('has one equivalence pattern for each mean and isotope which begins with parentward & the lesser parent (in the interval 0/1 to 1/1)', (): void => {
             expectToEqualSoFar(
                 use.Ordinal(equivalencePatterns, as.Ordinal<EquivalencePattern[]>(0)),
                 sequence(
@@ -88,7 +88,7 @@ describe('equivalence patterns - given a target level and list of means and/or i
             )
         })
 
-        it('has one equivalence pattern for each remaining entry point to the periodic segment', () => {
+        it('has one equivalence pattern for each remaining entry point to the periodic segment', (): void => {
             expectToEqualSoFar(
                 use.Ordinal(equivalencePatterns, as.Ordinal<EquivalencePattern[]>(1)),
                 sequence(
@@ -105,7 +105,7 @@ describe('equivalence patterns - given a target level and list of means and/or i
         })
     })
 
-    describe('silver mean and isotopes', () => {
+    describe('silver mean and isotopes', (): void => {
         let equivalencePatterns: EquivalencePattern[]
         const expectedPeriodicEquivalencePatternSegment: PeriodicEquivalencePatternSegment = as.Cycle([
             { lean: Lean.PARENTWARD, parent: Parent.LESSER, weight: as.Scalar(_1_MU_2) },
@@ -113,7 +113,7 @@ describe('equivalence patterns - given a target level and list of means and/or i
             { lean: Lean.PARENTWARD, parent: Parent.GREATER, weight: as.Scalar(_1_MU_2) },
             { lean: Lean.CHILDWARD, parent: Parent.GREATER, weight: as.Scalar(_2_MU_2) },
         ])
-        beforeAll(() => {
+        beforeAll((): void => {
             equivalencePatterns = computeEquivalencePatterns(
                 as.Ordinal<Tree>(7),
                 [ _2_MU_2, _1_MU_2 ].map(as.Scalar),
@@ -125,12 +125,12 @@ describe('equivalence patterns - given a target level and list of means and/or i
             )
         })
 
-        it('has five possible equivalence patterns', () => {
+        it('has five possible equivalence patterns', (): void => {
             expect(computeLength(equivalencePatterns))
                 .toBe(as.Cardinal<EquivalencePattern[]>(5))
         })
 
-        it('has one equivalence pattern for each mean and isotope which begins with parentward & the lesser parent (in the interval 0/1 to 1/1)', () => {
+        it('has one equivalence pattern for each mean and isotope which begins with parentward & the lesser parent (in the interval 0/1 to 1/1)', (): void => {
             expectToEqualSoFar(
                 use.Ordinal(equivalencePatterns, as.Ordinal<EquivalencePattern[]>(0)),
                 sequence(
@@ -159,7 +159,7 @@ describe('equivalence patterns - given a target level and list of means and/or i
             )
         })
 
-        it('has one equivalence pattern for each remaining entry point to the periodic segment', () => {
+        it('has one equivalence pattern for each remaining entry point to the periodic segment', (): void => {
             expectToEqualSoFar(
                 use.Ordinal(equivalencePatterns, as.Ordinal<EquivalencePattern[]>(2)),
                 sequence(
@@ -202,7 +202,7 @@ describe('equivalence patterns - given a target level and list of means and/or i
         })
     })
 
-    describe('bronze mean and isotopes', () => {
+    describe('bronze mean and isotopes', (): void => {
         let equivalencePatterns: EquivalencePattern[]
         const expectedPeriodicEquivalencePatternSegment: PeriodicEquivalencePatternSegment = as.Cycle([
             { lean: Lean.PARENTWARD, parent: Parent.LESSER, weight: as.Scalar(_2_MU_3) },
@@ -212,7 +212,7 @@ describe('equivalence patterns - given a target level and list of means and/or i
             { lean: Lean.PARENTWARD, parent: Parent.GREATER, weight: as.Scalar(_1_MU_3) },
             { lean: Lean.CHILDWARD, parent: Parent.GREATER, weight: as.Scalar(_3_MU_3) },
         ])
-        beforeAll(() => {
+        beforeAll((): void => {
             equivalencePatterns = computeEquivalencePatterns(
                 as.Ordinal<Tree>(9),
                 [ _3_MU_3, _2_MU_3, _1_MU_3 ].map(as.Scalar),
@@ -224,12 +224,12 @@ describe('equivalence patterns - given a target level and list of means and/or i
             )
         })
 
-        it('has eight possible equivalence patterns', () => {
+        it('has eight possible equivalence patterns', (): void => {
             expect(computeLength(equivalencePatterns))
                 .toBe(as.Cardinal<EquivalencePattern[]>(8))
         })
 
-        it('has one equivalence pattern for each mean and isotope which begins with parentward & the lesser parent (in the interval 0/1 to 1/1)', () => {
+        it('has one equivalence pattern for each mean and isotope which begins with parentward & the lesser parent (in the interval 0/1 to 1/1)', (): void => {
             expectToEqualSoFar(
                 use.Ordinal(equivalencePatterns, as.Ordinal<EquivalencePattern[]>(0)),
                 sequence(
@@ -271,7 +271,7 @@ describe('equivalence patterns - given a target level and list of means and/or i
             )
         })
 
-        it('has one equivalence pattern for each remaining entry point to the periodic segment', () => {
+        it('has one equivalence pattern for each remaining entry point to the periodic segment', (): void => {
             expectToEqualSoFar(
                 use.Ordinal(equivalencePatterns, as.Ordinal<EquivalencePattern[]>(3)),
                 sequence(
@@ -340,7 +340,7 @@ describe('equivalence patterns - given a target level and list of means and/or i
         })
     })
 
-    describe('fourth metallic mean and isotopes', () => {
+    describe('fourth metallic mean and isotopes', (): void => {
         let equivalencePatterns: EquivalencePattern[]
         const _4_MU_4: number = computeMetallicValue({ metalIndex: as.Ordinal(4) })
         const _3_MU_4: number = _4_MU_4 - 1
@@ -356,7 +356,7 @@ describe('equivalence patterns - given a target level and list of means and/or i
             { lean: Lean.PARENTWARD, parent: Parent.GREATER, weight: as.Scalar(_1_MU_4) },
             { lean: Lean.CHILDWARD, parent: Parent.GREATER, weight: as.Scalar(_4_MU_4) },
         ])
-        beforeAll(() => {
+        beforeAll((): void => {
             equivalencePatterns = computeEquivalencePatterns(
                 as.Ordinal<Tree>(11),
                 [ _4_MU_4, _3_MU_4, _2_MU_4, _1_MU_4 ].map(as.Scalar),
@@ -368,12 +368,12 @@ describe('equivalence patterns - given a target level and list of means and/or i
             )
         })
 
-        it('has 11 possible equivalence patterns', () => {
+        it('has 11 possible equivalence patterns', (): void => {
             expect(computeLength(equivalencePatterns))
                 .toBe(as.Cardinal<EquivalencePattern[]>(11))
         })
 
-        it('has one equivalence pattern for each mean and isotope which begins with parentward & the lesser parent (in the interval 0/1 to 1/1)', () => {
+        it('has one equivalence pattern for each mean and isotope which begins with parentward & the lesser parent (in the interval 0/1 to 1/1)', (): void => {
             expectToEqualSoFar(
                 use.Ordinal(equivalencePatterns, as.Ordinal<EquivalencePattern[]>(0)),
                 sequence(
@@ -428,7 +428,7 @@ describe('equivalence patterns - given a target level and list of means and/or i
             )
         })
 
-        it('has one equivalence pattern for each remaining entry point to the periodic segment', () => {
+        it('has one equivalence pattern for each remaining entry point to the periodic segment', (): void => {
             expectToEqualSoFar(
                 use.Ordinal(equivalencePatterns, as.Ordinal<EquivalencePattern[]>(4)),
                 sequence(

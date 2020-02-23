@@ -33,13 +33,13 @@ const computeGeneratorsAndIntroductionCounts:
             (level: TreeLevel, levelIndex: Ordinal<Tree>): Cardinal => {
                 let levelIntroductions: Cardinal = as.Cardinal(0)
 
-                level.forEach((treeRatio: TreeRatio) => {
+                level.forEach((treeRatio: TreeRatio): void => {
                     const ratio: Rational = treeRatio.value
                     Object.values(Lean)
-                        .forEach((lean: Lean) => {
+                        .forEach((lean: Lean): void => {
                             Object.values(Parent)
-                                .forEach((parent: Parent) => {
-                                    weights.forEach((weight: Scalar) => {
+                                .forEach((parent: Parent): void => {
+                                    weights.forEach((weight: Scalar): void => {
                                         if (isComplementGenerator({ lean, ratio, parent })) {
                                             return
                                         }
@@ -54,7 +54,7 @@ const computeGeneratorsAndIntroductionCounts:
                                         const equivalence: Equivalence = { lean, parent, ratio, weight }
 
                                         let foundEquivalentGenerator: boolean = false
-                                        generators.forEach((generator: Generator) => {
+                                        generators.forEach((generator: Generator): void => {
                                             if (
                                                 !foundEquivalentGenerator &&
                                                 !isUndefined(newValue) &&

@@ -14,7 +14,7 @@ const equivalencePatternContainsMaybeNewOne:
 const computeMaybeNewEquivalencePattern: (equivalences: Equivalence[]) => EquivalencePattern =
     (equivalences: Equivalence[]): EquivalencePattern => {
         const maybeNewEquivalencePattern: EquivalencePattern = []
-        equivalences.forEach((equivalence: Equivalence) => {
+        equivalences.forEach((equivalence: Equivalence): void => {
             if (!equivalence) {
                 return
             }
@@ -32,7 +32,7 @@ const alreadyFoundEquivalencePattern:
     (equivalencePatterns: EquivalencePattern[], maybeNewEquivalencePattern: EquivalencePattern) => boolean =
     (equivalencePatterns: EquivalencePattern[], maybeNewEquivalencePattern: EquivalencePattern): boolean => {
         let alreadyFound: boolean = false
-        equivalencePatterns.forEach((equivalencePattern: EquivalencePattern) => {
+        equivalencePatterns.forEach((equivalencePattern: EquivalencePattern): void => {
             if (
                 !alreadyFound &&
                 equivalencePatternContainsMaybeNewOne(equivalencePattern, maybeNewEquivalencePattern)
@@ -50,7 +50,7 @@ const computeEquivalencePatterns: (targetLevel: Ordinal<Tree>, weights: Scalar[]
 
         const equivalencePatterns: EquivalencePattern[] = []
 
-        generators.forEach(({ equivalences }: Generator) => {
+        generators.forEach(({ equivalences }: Generator): void => {
             const maybeNewEquivalencePattern: EquivalencePattern = computeMaybeNewEquivalencePattern(equivalences)
 
             if (!alreadyFoundEquivalencePattern(equivalencePatterns, maybeNewEquivalencePattern)) {

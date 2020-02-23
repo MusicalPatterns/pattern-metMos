@@ -11,9 +11,9 @@ import {
     OCTAVE,
     Ordinal,
     Rational,
-    SCIENTIFIC_PITCHES,
     ScientificPitchNoteName,
     ScientificPitchOctaveNumber,
+    SCIENTIFIC_PITCHES,
     Tone,
 } from '@musical-patterns/utilities'
 import { Lean, Parent } from '../types'

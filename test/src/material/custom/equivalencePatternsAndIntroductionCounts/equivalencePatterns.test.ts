@@ -390,7 +390,7 @@ describe('equivalence patterns - given a target level and list of means and/or i
             expectToEqualSoFar(
                 use.Ordinal(equivalencePatterns, as.Ordinal<EquivalencePattern[]>(1)),
                 sequence(
-                    [ ],
+                    [],
                     repeat(
                         use.Cardinal(
                             expectedPeriodicEquivalencePatternSegment,
@@ -403,7 +403,7 @@ describe('equivalence patterns - given a target level and list of means and/or i
             expectToEqualSoFar(
                 use.Ordinal(equivalencePatterns, as.Ordinal<EquivalencePattern[]>(2)),
                 sequence(
-                    [ ],
+                    [],
                     repeat(
                         use.Cardinal(
                             expectedPeriodicEquivalencePatternSegment,
@@ -416,7 +416,7 @@ describe('equivalence patterns - given a target level and list of means and/or i
             expectToEqualSoFar(
                 use.Ordinal(equivalencePatterns, as.Ordinal<EquivalencePattern[]>(3)),
                 sequence(
-                    [ ],
+                    [],
                     repeat(
                         use.Cardinal(
                             expectedPeriodicEquivalencePatternSegment,

@@ -1,4 +1,4 @@
-import { Cardinal, Cycle, Maybe, NormalScalar, Ordinal, Rational, Scalar } from '@musical-patterns/utilities'
+import { Maybe, NormalScalar, Rational, Scalar } from '@musical-patterns/utilities'
 import { Lean, Parent } from '../../types'
 
 interface TreeRatio {

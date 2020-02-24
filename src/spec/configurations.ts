@@ -35,6 +35,7 @@ const configurations: MetMosConfigurations = {
         arrayedConstraint: {
             maxLength: 2,
             minLength: 2,
+            required: true,
         },
         constraint: {
             integer: true,

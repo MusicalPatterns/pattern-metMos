@@ -18,7 +18,7 @@ const computeMosScalars: (specs: MetMosSpecs) => Array<Scalar<Pitch>> =
 
         return mosExponents.map(
             (exponent: Exponent<Frequency>): Frequency =>
-            pow(period, exponent))
+                pow(period, exponent))
             .map((result: Frequency): Scalar<Pitch> => as.Scalar<Pitch>(as.number(result)),
             )
     }

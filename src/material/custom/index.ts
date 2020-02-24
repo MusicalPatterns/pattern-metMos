@@ -1,4 +1,4 @@
-export { TreeLevel,  Tree, TreeRatio } from './types'
+export { TreeLevel, Tree, TreeRatio } from './types'
 export { computeMos } from './mos'
 export { computeGenerator } from './generator'
 export { computeMetallicValue } from './metallicValue'
